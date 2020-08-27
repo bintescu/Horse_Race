@@ -1,3 +1,12 @@
+create table Curse
+  ( id_cursa mediumint unsigned ,
+    tara varchar(30) ,
+    cod_postal varchar(30) not null ,
+    strada varchar(30) ,
+    data datetime not null,
+    constraint pk_cursa primary key(id_cursa)
+);
+
 insert into curse
 values( 3000,'Romania',547266,'Strada Teilor','2016-05-10',60000,20000);
 insert into curse
