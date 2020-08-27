@@ -1,3 +1,15 @@
+create table Rezultate
+( id_cal mediumint unsigned ,
+  id_cursa mediumint unsigned ,
+  pozitie mediumint unsigned not null ,
+  constraint pk_rezultate primary key(id_cal,id_cursa)
+  );
+  
+  alter table Rezultate
+  add constraint fk_rezultate foreign key (id_cal) references cai(id_cal) on delete cascade ;
+  
+ alter table rezultate
+add constraint fkCursa_rezultate foreign key(id_cursa) references Curse(id_cursa) on delete cascade;
 
 insert into rezultate
 values(2006,3000,2);
