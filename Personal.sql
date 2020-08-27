@@ -1,3 +1,14 @@
+create table personal
+(
+  id_personal mediumint unsigned,
+  nume varchar(20) not null,
+  prenume varchar(30) ,
+  data_nasterii date ,
+  salariu float not null,
+  id_job varchar(20) not null,
+  constraint pk_personal primary key (id_personal ) ,
+  constraint fk_personal foreign key (id_job) references joburi(id_job) on delete cascade
+);
 
 insert into personal
 values ( 111 , 'Baran' , 'Paul', '1985-04-20', 'GRJ' , 2000);
