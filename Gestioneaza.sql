@@ -1,4 +1,13 @@
 -- Gestioneaza --
+create table Gestioneaza
+(
+  id_personal mediumint unsigned ,
+  id_cal mediumint unsigned ,
+  constraint pk_Gestioneaza primary key(id_personal , id_cal),
+  constraint fkPers_gestioneaza foreign key(id_personal) references personal(id_personal) on delete cascade ,
+  constraint fkCai_gestioneaza foreign key(id_cal) references Cai(id_cal) on delete cascade
+);
+
 insert into gestioneaza
 values(51,2002);
 insert into gestioneaza
