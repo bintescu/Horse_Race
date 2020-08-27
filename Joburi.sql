@@ -1,3 +1,12 @@
+create table Joburi
+(
+  id_job varchar(20) ,
+  denumire varchar(30) unique ,
+  salariu_minim double not null ,
+  salariu_maxim double not null,
+  constraint pk_joburi primary key(id_job)
+);
+
 insert into Joburi
 values ( 'GRJ' , 'Grajdar', 1500 , 2500);
 
