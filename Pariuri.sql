@@ -1,15 +1,17 @@
-create table PARIORI
-(  
-  id_parior mediumint unsigned,
-  nume varchar(20) not null,
-  prenume varchar(20),
-  data_nasterii date not null,
-  suma_totala double ,
-  telefon varchar(20) ,
-  constraint pk_id_parior primary key(id_parior)
-);
-alter table pariori
-add constraint ck_pariori check(date_add( sysdate(), interval -18 year) >= data_nasterii);
+create table Pariuri
+(
+  id_pariu mediumint unsigned ,
+  suma double not null ,
+  pozitie tinyint unsigned not null,
+  data date ,
+  id_cal mediumint unsigned not null,
+  id_cursa mediumint unsigned not null,
+  id_parior mediumint unsigned ,
+  constraint fk_pariuri foreign key(id_parior) references pariori(id_parior) on delete cascade ,
+  constraint pk_id_pariu primary key(id_pariu)
+  );
+alter table pariuri
+add constraint fkRezultat_pariu foreign key(id_cal,id_cursa) references Rezultate (id_cal,id_cursa) on delete cascade;
 
 insert into pariuri
 values(1,130,3,'2016-01-20',2006,3000,10);
