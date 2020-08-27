@@ -1,3 +1,12 @@
+  create table Cai
+  ( 
+     id_cal mediumint unsigned ,
+     rasa varchar(30) ,
+     data_nasterii date ,
+     nume varchar(30) not null ,
+     nr_boxa mediumint unsigned unique not null,
+     constraint pk_cal primary key(id_cal)
+  );
 
 insert into cai
 values( 2002, 'Thoroughbred', '2016-08-20', 'Damascus', 1);
