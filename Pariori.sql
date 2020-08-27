@@ -1,3 +1,16 @@
+create table PARIORI
+(  
+  id_parior mediumint unsigned,
+  nume varchar(20) not null,
+  prenume varchar(20),
+  data_nasterii date not null,
+  suma_totala double ,
+  telefon varchar(20) ,
+  constraint pk_id_parior primary key(id_parior)
+);
+alter table pariori
+add constraint ck_pariori check(date_add( sysdate(), interval -18 year) >= data_nasterii);
+
 insert into pariori
 values(10 , 'Popescu','Florin', '1986-07-23' ,0 ,'0768456212');
 insert into pariori
