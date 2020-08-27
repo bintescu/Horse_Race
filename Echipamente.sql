@@ -1,3 +1,14 @@
+create table Echipamente
+(
+   id_echipament mediumint unsigned ,
+   id_cal mediumint unsigned ,
+   data_cumparare date ,
+   pret double not null ,
+   firma varchar(30) ,
+   denumire varchar(30) not null,
+   constraint pk_echipamente primary key (id_echipament) ,
+   constraint fk_echipament foreign key(id_cal) references Cai(id_cal) on delete cascade
+);
 
 insert into echipamente
 values(1113,2002,'2017-02-20',400,'h4h','Coif de piele');
